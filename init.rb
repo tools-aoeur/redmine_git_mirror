@@ -20,7 +20,7 @@ end
 
 redmine_git_mirror_patches = proc do
   require 'repositories_helper'
-  require 'redmine_git_mirror/patches/repositories_helper_patch'
+  require_relative 'lib/redmine_git_mirror/patches/repositories_helper_patch'
 
   def include(klass, patch)
     klass.send(:include, patch) unless klass.included_modules.include?(patch)
